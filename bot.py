@@ -54,7 +54,7 @@ async def on_message(message):
         await finansijechannel.send(f'Spremno za update sledece: {novi_unos}')
     
     if poruka == 'vreme osvezi':
-        response = requests.get(url="http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/301537?apikey=CA9NQQq3k812FGW4wXWlCvA4pOD2onbY&details=true&metric=true")
+        response = requests.get(url="http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/301537?apikey="+APIKACCU+"&details=true&metric=true")
         await general_channel.send(response.status_code)
         response_json = json.loads(response.content)
 
